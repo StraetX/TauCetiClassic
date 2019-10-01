@@ -40,7 +40,7 @@
 	var/protect_roles_from_antagonist = 0// If security and such can be traitor/cult/other
 	var/continous_rounds = 1			// Gamemodes which end instantly will instead keep on going until the round ends by escape shuttle or nuke.
 	var/allow_Metadata = 1				// Metadata is supported.
-	var/fps = 20
+	var/fps = 60
 	var/socket_talk	= 0					// use socket_talk to communicate with other processes
 	var/list/resource_urls = null
 	var/antag_hud_allowed = 0			// Ghosts can turn on Antagovision to see a HUD of who is the bad guys this round.
@@ -77,7 +77,7 @@
 	var/disable_player_mice = 0
 	var/uneducated_mice = 0 //Set to 1 to prevent newly-spawned mice from understanding human speech
 
-	var/rus_language = 0
+	var/rus_language = 1
 
 	var/deathtime_required = 18000	//30 minutes
 

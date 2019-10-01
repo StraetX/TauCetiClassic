@@ -249,14 +249,14 @@
 					for(var/mob/M in L)
 						M.other_mobs = 1
 						if(mob != M)
-							M.animate_movement = 3
+							M.animate_movement = 1
 					for(var/mob/M in L)
 						spawn( 0 )
 							step(M, direct)
 							return
 						spawn( 1 )
 							M.other_mobs = null
-							M.animate_movement = 2
+							M.animate_movement = 1
 							return
 
 		else if(mob.confused)

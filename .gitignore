@@ -1,12 +1,9 @@
-#ignore misc BYOND files
-*.log
-*.int
-*.rsc
-*.dmb
-*.lk
-*.backup
+
+taucetistation.rsc.lk
+taucetistation.rsc
+taucetistation.lk
+taucetistation.int
+taucetistation.dyn.rsc.lk
+taucetistation.dyn.rsc
 taucetistation.dmb
-Thumbs.db
-data/
-.vscode
-**/MapFXDrawer/*.png
+data/*

@@ -1,7 +1,7 @@
 /mob
 	density = 1
 	layer = 4.0
-	animate_movement = 2
+	animate_movement = 1
 //	flags = NOREACT
 	var/datum/mind/mind
 
