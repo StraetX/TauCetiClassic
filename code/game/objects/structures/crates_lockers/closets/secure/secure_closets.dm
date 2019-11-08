@@ -68,6 +68,30 @@
 		to_chat(user, "<span class='notice'>Access Denied</span>")
 
 /obj/structure/closet/secure_closet/attackby(obj/item/weapon/W, mob/user)
+	var/target = src
+	if(istype(W, /obj/item/weapon/screwdriver) && locked && hack_step == 0)
+		to_chat(user, "<span class='notice'>Вы откручиваете болты с панели доступа! [src.name].</span>")
+		if(do_after(user, 80, target = target) && target)
+			to_chat(user, "<span class='notice'>Вы открутили болты с панели доступа! [src.name].</span>")
+			hack_step = 1
+	if(istype(W, /obj/item/weapon/crowbar) && locked && hack_step == 1)
+		to_chat(user, "<span class='notice'>Вы пытаетесь поддеть панель! [src.name].</span>")
+		if(do_after(user, 40, target = target) && target)
+			to_chat(user, "<span class='notice'>Вы сняли панель! [src.name].</span>")
+			hack_step = 2
+	if(istype(W, /obj/item/weapon/wirecutters) && locked && hack_step == 2)
+		to_chat(user, "<span class='notice'>Вы перерезаете провода! [src.name].</span>")
+		if(do_after(user, 160, target = target) && target)
+			to_chat(user, "<span class='notice'>Вы перерезали провода! [src.name].</span>")
+			hack_step = 3
+	if(istype(W, /obj/item/device/multitool) && locked && hack_step == 3)
+		to_chat(user, "<span class='notice'>Вы соединяете провода в правильном порядке. [src.name] ? [W.name].</span>")
+		if(do_after(user, 160, target = target) && target)
+			to_chat(user, "<span class='notice'>[W.name] Вы соеденили провода! [src.name].</span>")
+			hack_step = 0
+			locked = 0
+			update_icon()
+
 	if(src.opened)
 		if(istype(W, /obj/item/weapon/grab))
 			if(src.large)
